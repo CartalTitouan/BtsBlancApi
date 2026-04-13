@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Événements</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <span class="nav-title">BTS Evenement Arago</span>
+        <div class="nav-right">
+            <span id="nav-username"></span>
+            <button class="btn btn-outline" onclick="logout()">Déconnexion</button>
+        </div>
+    </nav>
+
+    <main class="container">
+
+        <!-- Formulaire création (visible pour tous, erreur si non admin) -->
+        <section class="card" id="create-section">
+            <h2>Créer un événement</h2>
+            <div id="create-error" class="error hidden"></div>
+            <form id="create-form">
+                <div class="form-grid">
+                    <div class="field">
+                        <label>Titre</label>
+                        <input type="text" id="titre" required placeholder="Titre de l'événement">
+                    </div>
+                    <div class="field">
+                        <label>Lieu</label>
+                        <input type="text" id="lieu" required placeholder="Paris, Lyon...">
+                    </div>
+                    <div class="field">
+                        <label>Date</label>
+                        <input type="datetime-local" id="date" required>
+                    </div>
+                    <div class="field">
+                        <label>Type</label>
+                        <select id="type">
+                            <option value="0">Salon professionnel</option>
+                            <option value="1">Conférence</option>
+                            <option value="2">Journées thématiques</option>
+                        </select>
+                    </div>
+                    <div class="field field-full">
+                        <label>Contenu</label>
+                        <textarea id="contenu" required placeholder="Description de l'événement..."></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Créer l'événement</button>
+            </form>
+        </section>
+
+        <!-- Liste des événements -->
+        <section>
+            <h2>Liste des événements</h2>
+            <div id="events-error" class="error hidden"></div>
+            <div id="events-list" class="events-grid"></div>
+        </section>
+    </main>
+
+    <script src="evenements.js"></script>
+</body>
+</html>
