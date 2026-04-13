@@ -35,12 +35,14 @@ HTML / CSS / JS classique (servi via wwwroot), Fetch API, localStorage, décodag
 | POST | /api/auth/register | Public |
 | POST | /api/auth/login | Public |
 | GET | /api/evenement | Authentifié |
+| GET | /api/evenement/{id} | Authentifié |
 | POST | /api/evenement | Admin |
 | DELETE | /api/evenement/{id} | Admin |
 | POST | /api/inscription/{evenementId} | Authentifié |
 | DELETE | /api/inscription/{evenementId} | Authentifié |
 | GET | /api/inscription/evenement/{evenementId} | Authentifié |
 | POST | /api/admin/promouvoir/{userId} | Admin |
+| POST | /api/admin/depromouvoir/{userId} | Admin |
 | GET | /api/admin/users | Admin |
 
 - Front accessible sur https://localhost:7056/index.html
